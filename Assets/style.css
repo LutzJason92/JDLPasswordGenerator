@@ -17,6 +17,10 @@ body {
   background-color: #f9fbfd;
 }
 
+body h2 {
+  text-align: center;
+}
+
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
