@@ -1,109 +1,83 @@
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+// Variable Declarations
+var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-//   passwordText.value = password;
-// }
-// //create generatePassword function
+var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            // 0                          10
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+              //  0
+var specChars = ["#", "$", "!", "@", "&", "*", "^", 
+        //  10
+"%", "?", "="];
 
-// //prompt user for legnth
-// //error handling 
+//Random selctions
+//uppers
+var randomUpper = Math.floor(Math.random() * upperCaseChars.length)
+var randomUppChoice = upperCaseChars[randomUpper]
+console.log(randomUppChoice)
 
-// // errror handeling - did they gen a valid number
+//lowers
+var randomLower = Math.floor(Math.random() * lowerCaseChars.length)
+var randomLowChoice = lowerCaseChars[randomLower]
+console.log(randomLowChoice)
 
-// //prompt user for legnth
-// //promt to confirm all characterslection
+//numbers
+var randomNumb = Math.floor(Math.random() * numbers.length)
+var randomNumChoice = numbers[randomNumb]
+console.log(randomNumChoice)
 
-//need a way to pull characters from data structure.
-                  //   0    1     2
-var upperCaseChars = ["A", "M", "Q"];
-var lowerCaseChars = ["s", "y", "r"]
-var numbers = [2, 4, 6]
-var specChars = ["#", "$", "&"]
-// How do i randomly choose these characters from arrays
-// Grab value via index 
-// how do i use math.random to choose random value
-var randomNumb = Math.floor(Math.random() * upperCaseChars.length)
-var randomChoice = upperCaseChars[randomNumb]
-console.log(randomChoice)
+//specChars
+var randomSpec = Math.floor(Math.random() * specChars.length)
+var randomSpecChoice = specChars[randomSpec]
+console.log(randomSpecChoice)
 
-var pwGenerated = []
- // push items to array method
- // concat array variables
-// for loop for password elements
+var randomGenerated = [
+    "randomUppChoice", + "randomLowChoice", + "randomNumChoice", + "randomSpecChoice" ];
 
-//length of array vai .length
-//var randomNumb = Math.random[length - 1]
-
-
+console.log(randomGenerated)
 
 //PW Prompt Chain
-function startQuest(){
+function startPrompts(){
+  //length
     var pwLength = prompt("How long of a password?(between 8-128 characters");
     if (pwLength >= 128){
       alert("Password must be less than 128 characters.");
-      return null
-    }
-    else if (pwLength <= 8){
+    } else if (pwLength <= 8){
       alert("Password must be between greater than 8 characters.");
-    }
-    else {
-      alert("Sweet " + pwLength + " characters. Just a few more questions.")};
-
-    var wantsSpecChar = confirm("Do you want to include special Characters?"); 
-
-    var wantsUppers = confirm("Do you want to include uppercase letters?");
-//True/False uppercase
-      
-    var wantsLowers = confirm("Do you want to include lowercase letters?");
-//True/False lowercase    
+    } else { 
+      alert("Sweet " + pwLength + " characters. Just a few more questions.")};  
+    
+  
+      //Special Characters
+    var wantsSpecChar = confirm("Do you want to include special Characters?");
+      if (wantsSpecChar === true){
+        alert("Okay, we'll include Special Characters");
+      } else { (wantsSpecChar != true)
+        alert("Okay, we wont include special characters but Passwords are more secure with Special Characters.")};
         
+   
+        //Uppercase 
+    var wantsUppers = confirm("Do you want to include uppercase letters?");
+    if (wantsUppers === true){
+      alert("Okay, we will include Uppercase letters.");
+    } else { (wantsUppers === false)
+      alert("Okay, we wont include Uppercase letters, but Passwords are more secure with a combination of Upper and Lowercase characters.")};
+  
+  
+      //Lowercase
+    var wantsLowers = confirm("Do you want to include lowercase letters?");
+    if (wantsLowers === true){
+      alert("Okay, we will include Lowercase letters.");
+    } else {(wantsLowers === false)
+      alert("Okay, we wont include Lowercase letters, but Passwords are more secure with a combination of Upper and Lowercase characters.")};
+    
+    
+      //Numbers
+    var wantsNumbers = confirm("Do you want to include numbers?");
+    if (wantsNumbers === true){
+      alert("Okay, we will include Numbers.");
+    } else {(wantsNumbers === false)
+      alert("Okay, we wont include numbers, but Passwords are more secure with a combination of numbers, letters, and special characters.")}
 
-        //!!!!!!end of prompts!!!!!!!
-      }
-var userOptions = {
-  needsSpecChar: wantsSpecChar,
-  needsUpperChars: wantsUppers,
-  needsLowerChars: wantsLowers
-      }
+    }
 
-
-
-console.log(userOptions)
-
-
-
-
-
-
-//value Generating Functions  
-  function getRandomLower(){
-  return String.fromCharCode(Math.floor(Math.random() * 26)+97);
-}
-
-function getRandomUpper(){
-  return String.fromCharCode(Math.floor(Math.random() * 26)+65);
-}
-
-function getRandomNumber(){
-  return String.fromCharCode(Math.floor(Math.random() * 10)+48);
-}
-
-function getRandomSymbol(){
-  var symbols = "!'#$%&()*+-.<>/";
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
- 
-// //index1
-// console.log(getRandomSymbol())
-// //index2
-// console.log(getRandomUpper())
-// //index3
-// console.log(randomLower)
-// //index4
-// console.log(getRandomLower())
