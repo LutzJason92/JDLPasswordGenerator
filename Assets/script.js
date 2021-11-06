@@ -1,4 +1,57 @@
 
+// // Variable Declarations
+// var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+// var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+//             // 0                          10
+// var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+//               //  0
+// var specChars = ["#", "$", "!", "@", "&", "*", "^", 
+//         //  10
+// "%", "?", "="];
+// var password = " ";
+// var randomNumber = " ";
+
+// //Random selctions
+// //uppers
+// var randomUpper = Math.floor(Math.random() * upperCaseChars.length)
+// var randomNumber = upperCaseChars[randomUpper]
+// console.log(randomNumber)
+
+// //lowers
+// var randomLower = Math.floor(Math.random() * lowerCaseChars.length)
+// var randomNumber = lowerCaseChars[randomLower]
+// console.log(randomNumber)
+
+// //numbers
+// var randomNumb = Math.floor(Math.random() * numbers.length)
+// var randomNumber = numbers[randomNumb]
+// console.log(randomNumber)
+
+// //specChars
+// var randomSpec = Math.floor(Math.random() * specChars.length)
+// var randomNumber = specChars[randomSpec]
+// console.log(randomNumber)
+
+// var randomArray = [
+
+//    randomLower , +  //0
+//    randomNumb , +   //1
+//    randomNumb , +   //2
+//    randomSpec ];    //3
+
+//    console.log(randomArray)
+
+
+
+
+
+
+
+//PW Prompt Chain
+function startPrompts(){
+
+
 // Variable Declarations
 var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -9,51 +62,49 @@ var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specChars = ["#", "$", "!", "@", "&", "*", "^", 
         //  10
 "%", "?", "="];
+var password = " ";
+var randomNumber = " ";
 
 //Random selctions
 //uppers
 var randomUpper = Math.floor(Math.random() * upperCaseChars.length)
-var randomUppChoice = upperCaseChars[randomUpper]
-console.log(randomUppChoice)
+var randomNumber = upperCaseChars[randomUpper]
+console.log(randomNumber)
 
 //lowers
 var randomLower = Math.floor(Math.random() * lowerCaseChars.length)
-var randomLowChoice = lowerCaseChars[randomLower]
-console.log(randomLowChoice)
+var randomNumber = lowerCaseChars[randomLower]
+console.log(randomNumber)
 
 //numbers
 var randomNumb = Math.floor(Math.random() * numbers.length)
-var randomNumChoice = numbers[randomNumb]
-console.log(randomNumChoice)
+var randomNumber = numbers[randomNumb]
+console.log(randomNumber)
 
 //specChars
 var randomSpec = Math.floor(Math.random() * specChars.length)
-var randomSpecChoice = specChars[randomSpec]
-console.log(randomSpecChoice)
+var randomNumber = specChars[randomSpec]
+console.log(randomNumber)
 
-var randomGenerated = [
-    "randomUppChoice", + "randomLowChoice", + "randomNumChoice", + "randomSpecChoice" ];
-
-console.log(randomGenerated)
-
-//PW Prompt Chain
-function startPrompts(){
-  //length
+//length
     var pwLength = prompt("How long of a password?(between 8-128 characters");
-    if (pwLength >= 128){
-      alert("Password must be less than 128 characters.");
-    } else if (pwLength <= 8){
-      alert("Password must be between greater than 8 characters.");
-    } else { 
-      alert("Sweet " + pwLength + " characters. Just a few more questions.")};  
+    if (pwLength <= 128 && pwLength >= 8){
+      console.log(pwLength)
+       alert("Sweet " + pwLength + " characters. Just a few more questions.")};
+        if (pwLength >= 128 || pwLength <= 8) {
+       alert("Password must be between 8 and 128 characters.")}
+       
+       ;
+        
     
   
       //Special Characters
     var wantsSpecChar = confirm("Do you want to include special Characters?");
       if (wantsSpecChar === true){
-        alert("Okay, we'll include Special Characters");
+        alert("Okay, we will include Special Characters");
       } else { (wantsSpecChar != true)
         alert("Okay, we wont include special characters but Passwords are more secure with Special Characters.")};
+      
         
    
         //Uppercase 
@@ -76,8 +127,31 @@ function startPrompts(){
     var wantsNumbers = confirm("Do you want to include numbers?");
     if (wantsNumbers === true){
       alert("Okay, we will include Numbers.");
-    } else {(wantsNumbers === false)
+    } else {(wantsNumbers === false);
       alert("Okay, we wont include numbers, but Passwords are more secure with a combination of numbers, letters, and special characters.")}
+      
+      
+      for ( var i = 0; i < pwLength; i++ ) {
+        password += randomNumber[Math.floor(Math.random() * randomNumber.length)];
+      
+        console.log(password)
+      }
+      
+      }
+      
+function generatePassword(){
+    var password = startPrompts()
+    var passwordText = document.getElementById("#password");  
+    passwordText.value = password;
 
-    }
+}
+document.getElementById("generate").addEventListener('click', startPrompts);
+// }
+// console.log(passwordChoices)
 
+
+
+
+
+
+    
