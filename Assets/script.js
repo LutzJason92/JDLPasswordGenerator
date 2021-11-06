@@ -18,90 +18,69 @@
 // //prompt user for legnth
 // //promt to confirm all characterslection
 
-// //did user select at least 1 option
+//need a way to pull characters from data structure.
+                  //   0    1     2
+var upperCaseChars = ["A", "M", "Q"];
+var lowerCaseChars = ["s", "y", "r"]
+var numbers = [2, 4, 6]
+var specChars = ["#", "$", "&"]
+// How do i randomly choose these characters from arrays
+// Grab value via index 
+// how do i use math.random to choose random value
+var randomNumb = Math.floor(Math.random() * upperCaseChars.length)
+var randomChoice = upperCaseChars[randomNumb]
+console.log(randomChoice)
+
+var pwGenerated = []
+ // push items to array method
+ // concat array variables
+// for loop for password elements
+
+//length of array vai .length
+//var randomNumb = Math.random[length - 1]
 
 
-// //prompt use to 
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-//     var userAdjective = prompt("Please provide an Adjective");
-//     alert (userAdjective);
-
-
+//PW Prompt Chain
 function startQuest(){
     var pwLength = prompt("How long of a password?(between 8-128 characters");
     if (pwLength >= 128){
       alert("Password must be less than 128 characters.");
+      return null
     }
     else if (pwLength <= 8){
       alert("Password must be between greater than 8 characters.");
     }
     else {
-      alert("Sweet " + pwLength + " characters. Just a few more questions.");
-//Password length      
-      console.log(pwLength)
-    }
-   
-    if (confirm("Do you want to include special Characters?")){
-//True/False Special Characters      
-      console.log(true);
-    } else { 
-      console.log(false)
-    }
-    if (confirm("Do you want to include uppercase letters?")){
-//True/False uppercase      
-      console.log(true);
-    } else { 
-      console.log(false)
-    }
-    if (confirm("Do you want to include lowercase letters?")){
-//True/False lowercase      
-            console.log(true);
-          } else { 
-            console.log(false)
-          }
-       
+      alert("Sweet " + pwLength + " characters. Just a few more questions.")};
+
+    var wantsSpecChar = confirm("Do you want to include special Characters?"); 
+
+    var wantsUppers = confirm("Do you want to include uppercase letters?");
+//True/False uppercase
       
-      
-    
-  
-  }
-  
+    var wantsLowers = confirm("Do you want to include lowercase letters?");
+//True/False lowercase    
+        
+
+        //!!!!!!end of prompts!!!!!!!
+      }
+var userOptions = {
+  needsSpecChar: wantsSpecChar,
+  needsUpperChars: wantsUppers,
+  needsLowerChars: wantsLowers
+      }
+
+
+
+console.log(userOptions)
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//value Generating Functions  
   function getRandomLower(){
   return String.fromCharCode(Math.floor(Math.random() * 26)+97);
 }
@@ -119,8 +98,12 @@ function getRandomSymbol(){
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-
-console.log(getRandomSymbol())
-console.log(getRandomUpper())
-console.log(getRandomNumber())
-console.log(getRandomLower())
+ 
+// //index1
+// console.log(getRandomSymbol())
+// //index2
+// console.log(getRandomUpper())
+// //index3
+// console.log(randomLower)
+// //index4
+// console.log(getRandomLower())
