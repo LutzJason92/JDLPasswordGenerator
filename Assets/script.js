@@ -1,52 +1,4 @@
-
-// // Variable Declarations
-// var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-// var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-//             // 0                          10
-// var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-//               //  0
-// var specChars = ["#", "$", "!", "@", "&", "*", "^", 
-//         //  10
-// "%", "?", "="];
-// var password = " ";
-// var randomNumber = " ";
-
-// //Random selctions
-// //uppers
-// var randomUpper = Math.floor(Math.random() * upperCaseChars.length)
-// var randomNumber = upperCaseChars[randomUpper]
-// console.log(randomNumber)
-
-// //lowers
-// var randomLower = Math.floor(Math.random() * lowerCaseChars.length)
-// var randomNumber = lowerCaseChars[randomLower]
-// console.log(randomNumber)
-
-// //numbers
-// var randomNumb = Math.floor(Math.random() * numbers.length)
-// var randomNumber = numbers[randomNumb]
-// console.log(randomNumber)
-
-// //specChars
-// var randomSpec = Math.floor(Math.random() * specChars.length)
-// var randomNumber = specChars[randomSpec]
-// console.log(randomNumber)
-
-// var randomArray = [
-
-//    randomLower , +  //0
-//    randomNumb , +   //1
-//    randomNumb , +   //2
-//    randomSpec ];    //3
-
-//    console.log(randomArray)
-
-
-
-
 var generateBtn = document.getElementById('#generate');
-
 
 //PW Prompt Chain
 function startPrompts(){
@@ -162,7 +114,7 @@ function generatePassword(){
  
 }
 document.getElementById("generate").addEventListener('click', generatePassword);
-// }
+
 
 
 
